@@ -7,14 +7,14 @@ Requirements
 * package.json (See [here](https://flybook.js.org/basic/configuration.html))
 * docs (See [here](https://flybook.js.org/basic/getting-started.html))
 
-When you build from this image, Flaybook will generate static files to `/docs`.
+When you build from this image, Flaybook will generate static files to `/out`.
 
 Then you can use [multi-stage build](https://docs.docker.com/engine/userguide/eng-image/multistage-build) to create a lightweight image that publishes outputs without build environments.
 
 See an example:
 ```Dockerfile
-FROM CometKim/flybook-onbuild:latest AS build-env
+FROM cometkim/flybook-onbuild:latest AS build-env
 
-FROM nginx:latest AS production-env
+FROM nginx:latest
 COPY --from=build-env /out /usr/share/nginx/html
 ```
