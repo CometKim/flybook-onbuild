@@ -3,13 +3,13 @@
 
 # How to use this image?
 Requirements
-* Docker 17.06+ (for multi-stage build)
+* Docker 17.05+ (for multi-stage build)
 * package.json (See [here](https://flybook.js.org/basic/configuration.html))
 * docs (See [here](https://flybook.js.org/basic/getting-started.html))
 
 When you build from this image, Flaybook will generate static files to `/out`.
 
-Then you can use [multi-stage build](https://docs.docker.com/engine/userguide/eng-image/multistage-build) to create a lightweight image that publishes outputs without build environments.
+Then you can use [multi-stage build](https://docs.docker.com/engine/userguide/eng-image/multistage-build) to create a lightweight image can publish outputs without build environments.
 
 See an example:
 ```Dockerfile
